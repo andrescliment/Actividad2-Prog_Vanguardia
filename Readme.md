@@ -1,6 +1,23 @@
 # Actividad 2 - Proyecto Java con Apache Commons CLI y Log4j
 
-Este proyecto es una aplicación Java de consola desarrollada como parte de la actividad 2 del curso, cuyo objetivo es demostrar el uso de bibliotecas externas como **Apache Commons CLI** para el manejo de argumentos desde la línea de comandos, y **Log4j** para la gestión de logs.
+Este proyecto es una aplicación Java de consola desarrollada como parte de la **Actividad 2** del curso de Programación Visual en **UDECI**.
+
+El objetivo principal es incorporar y utilizar bibliotecas externas en un proyecto Java, específicamente:
+
+- **Apache Commons CLI**: para gestionar argumentos de línea de comandos.
+- **Apache Log4j**: para registrar logs del programa en consola.
+
+Además, se contó con el apoyo de un **modelo de lenguaje de inteligencia artificial (LLM)** para asistir en la integración de tecnologías y la documentación del proyecto.
+
+---
+
+## 🤖 Asistencia con IA
+
+Durante el desarrollo del proyecto, se utilizó **ChatGPT (basado en modelos de lenguaje de OpenAI)** para:
+
+- Asistir en la integración de bibliotecas externas (Commons CLI y Log4j).
+- Solucionar errores durante el empaquetado y ejecución del proyecto.
+- Generar esta documentación en formato Markdown para GitHub.
 
 ---
 
@@ -22,19 +39,23 @@ Actividad2/
 
 ---
 
-## 🚀 Ejecución del Proyecto
+## 🚀 Cómo ejecutar el proyecto
 
-### 1. Compilar con Maven
+### 1. Compilar el proyecto con Maven
+
+Desde la raíz del proyecto, ejecutá:
 
 ```bash
 mvn clean package
 ```
 
-Esto generará un `.jar` en la carpeta `target/`:
+Esto generará un archivo ejecutable en `target/`:
 
 ```
 Actividad2-1.0-SNAPSHOT-jar-with-dependencies.jar
 ```
+
+> Incluye tu código y todas las dependencias necesarias.
 
 ---
 
@@ -44,15 +65,17 @@ Actividad2-1.0-SNAPSHOT-jar-with-dependencies.jar
 java -jar target/Actividad2-1.0-SNAPSHOT-jar-with-dependencies.jar -n TuNombre
 ```
 
-📌 Opción `-n` o `--name`: permite pasar tu nombre como parámetro.
+📌 Argumento `-n` o `--name`: nombre del usuario.
 
-**Ejemplo:**
+**Ejemplo de salida:**
 
 ```
 Hola y bienvenido, Juan!
 i = 1
 i = 2
-...
+i = 3
+i = 4
+i = 5
 ```
 
 ---
@@ -60,16 +83,17 @@ i = 2
 ## 🧰 Tecnologías Utilizadas
 
 - Java 24
-- Maven
+- Apache Maven
 - Apache Commons CLI 1.5.0
 - Apache Log4j 1.2.17
-- maven-assembly-plugin
+- Maven Assembly Plugin (para generar JAR con dependencias)
+- ChatGPT (IA de OpenAI) para asistencia técnica y documentación
 
 ---
 
 ## 📝 Configuración del Log
 
-En `src/main/resources/log4j.properties`:
+Archivo: `src/main/resources/log4j.properties`
 
 ```properties
 log4j.rootLogger=DEBUG, console
@@ -78,22 +102,25 @@ log4j.appender.console.layout=org.apache.log4j.PatternLayout
 log4j.appender.console.layout.ConversionPattern=%d{HH:mm:ss} %-5p [%c] - %m%n
 ```
 
-Esto muestra mensajes como:
+**Ejemplo de log en ejecución:**
 
 ```
 12:00:01 INFO  [ar.edu.udeci.pv.Main] - Aplicación iniciada con el nombre: Juan
+12:00:01 DEBUG [ar.edu.udeci.pv.Main] - Iteración i = 1
+...
 ```
 
 ---
 
-## 📌 Notas
+## 📌 Notas adicionales
 
-- Si no se pasa el parámetro `-n`, se usa `Mundo` por defecto.
-- El código imprime 5 iteraciones con logs en cada paso.
+- Si no se pasa el parámetro `-n`, el valor por defecto es `"Mundo"`.
+- El programa imprime una secuencia de iteraciones con logs asociados.
+- El `pom.xml` ya incluye todas las dependencias necesarias para compilar y ejecutar.
 
 ---
 
 ## 📬 Contacto
 
-Este proyecto fue realizado como parte del curso de Programación Visual en la **UDECI**.  
-Para consultas, contactá con tu docente o a través del aula virtual.
+Este proyecto fue realizado como parte del curso de **Programación Visual** en **UDECI**.  
+Para consultas o sugerencias, contactá con tu docente o vía el aula virtual.
